@@ -86,7 +86,8 @@ npm run lint:js
 There is a known issue between Prettier and JS Lint. Prettier automatically formats the code and converts a single quote (‘) to a double quote ("). However, JS Lint considers it an error, and it expects a single quote (').
 
 1. Install the ESLint extension on Visual Studio code.
-   ![install ESLint extension](./previews/jslint/install_eslint_extension.jpg)
+
+![install ESLint extension](./previews/jslint/install_eslint_extension.jpg)
 
 2. Next, we need to install `eslint-plugin` package. Run the command.
 
