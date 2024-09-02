@@ -70,3 +70,28 @@ In the `block.json` file, the most important tag is the **name**. So, do not for
 1. There are a couple of files inside the src folder. Index.js file loads the required files from the back-end and front-end editors. The edit.js file is used for the back-end editor, and the save.js file produces the output for the front end.
 2. React and JSX knowledge are required to add options to the blocks.
 3. Do not use any direct HTML inside the edit function. Instead, use the **wp-components** to create all the input, textarea, and dropdown fields.
+
+## JS LINTING
+
+The js linting option checks for any JavaScript errors or unused variables. Write the following command to check the status of JS linting. After running the following command, you will see the following errors.
+
+```bash
+npm run lint:js
+```
+
+![js lint error](./previews/jslint/js_lint_error.jpg)
+
+### Configure Prettier and JS Lint
+
+There is a known issue between Prettier and JS Lint. Prettier automatically formats the code and converts a single quote (‘) to a double quote ("). However, JS Lint considers it an error, and it expects a single quote (').
+
+1. Install the ESLint extension on Visual Studio code.
+   ![install ESLint extension](./previews/jslint/install_eslint_extension.jpg)
+
+2. Next, we need to install `eslint-plugin` package. Run the command.
+
+```bash
+npm install @wordpress/eslint-plugin --save-dev
+```
+
+**Ref:** https://developer.wordpress.org/block-editor/reference-guides/packages/packages-eslint-plugin/
