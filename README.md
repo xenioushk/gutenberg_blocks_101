@@ -81,7 +81,7 @@ npm run lint:js
 
 ![js lint error](./previews/jslint/js_lint_error.jpg)
 
-### Configure Prettier and JS Lint
+### Configure Prettier and JS Lint to Fix conflicts
 
 There is a known issue between Prettier and JS Lint. Prettier automatically formats the code and converts a single quote (‘) to a double quote ("). However, JS Lint considers it an error, and it expects a single quote (').
 
@@ -96,3 +96,37 @@ npm install @wordpress/eslint-plugin --save-dev
 ```
 
 **Ref:** https://developer.wordpress.org/block-editor/reference-guides/packages/packages-eslint-plugin/
+
+3. Install the `prettier-config` package.
+
+```bash
+npm install @wordpress/prettier-config --save-dev
+```
+
+**Ref:** https://developer.wordpress.org/block-editor/reference-guides/packages/packages-prettier-config/
+
+4. Next, open the **package.json** file and add the codes.
+
+```JSON
+"prettier": "@wordpress/prettier-config"
+```
+
+**Example**
+
+![prettier config](/previews/jslint/prettier_config.jpg)
+
+5. Install `eslint-config-prettier` package will disable all the unnecessary rules for prettier and more conflicting items.
+
+```bash
+npm install --save-dev eslint-config-prettier
+```
+
+6. Create a **.eslintrc** file in the plugin root directory. Add the code to that file.
+
+```JSON
+{
+  "extends": ["plugin:@wordpress/eslint-plugin/recommended-with-formatting", "prettier"]
+}
+```
+
+That's it.
