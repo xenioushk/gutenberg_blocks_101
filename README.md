@@ -245,7 +245,7 @@ npm run prepare
 4. Next, run the `hook` command. This command will create a `pre-commit` file. We will update the command in the next steps.
 
 ```bash
-npx husky add .husky/pre-commit "npm test"
+echo "npm test" > .husky/pre-commit
 ```
 
 ![husky pre-commit file](/previews/husky/husky_pre_commit_file.jpg)
@@ -267,6 +267,8 @@ npm i -D lint-staged
 		"*.scss": "npx stylelint --fix"
 	},
 ```
+
+![package.json lint-staged code](/previews/husky/package-json-lint-staged-code.jpg)
 
 7. Now try to commit the changes.
 
