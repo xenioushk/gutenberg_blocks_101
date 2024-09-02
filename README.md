@@ -1,6 +1,7 @@
 ## Table of contents
 
 - [Initialize a Gutenberg Block](#initialize-a-Gutenberg-block)
+- [VS Code Editor Settings](#vs-code-editor-settings)
 - [JS LINTING](#js-linting)
 - [STYLE LINTING](#style-linting)
 - [Configure Husky](#configure-husky)
@@ -77,6 +78,29 @@ In the `block.json` file, the most important tag is the **name**. So, do not for
 1. There are a couple of files inside the src folder. Index.js file loads the required files from the back-end and front-end editors. The edit.js file is used for the back-end editor, and the save.js file produces the output for the front end.
 2. React and JSX knowledge are required to add options to the blocks.
 3. Do not use any direct HTML inside the edit function. Instead, use the **wp-components** to create all the input, textarea, and dropdown fields.
+
+## VS Code Editor Settings
+
+We need to add some custom settings code for the VS code editor. Please note that, you need to create a folder called `.vscode`. Next, create a file called `settings.json` and add this codes into that file.
+
+```json
+{
+  "json.schemas": [],
+  "editor.formatOnSave": true,
+  "workbench.settings.useSplitJSON": true,
+
+  "[scss]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "always"
+    }
+  }
+}
+```
+
+**Important Note:** Always add this `.vscode` folder into your editors root directory.
+
+![.vscode folder](/previews/vscode/vscode_settings.jpg)
 
 ## JS LINTING
 
