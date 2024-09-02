@@ -204,7 +204,7 @@ npx stylelint "**/*.scss"
 "format": "wp-scripts format && stylelint \"**/*.scss\" --fix"
 ```
 
-![Stylelint format](/previews/stylelint/stylelint-config.jpg)
+![Stylelint format](/previews/stylelint/update_stylelint_format_code.jpg)
 
 So, when we run the following command, it will automatically format the code.
 
