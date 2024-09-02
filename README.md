@@ -273,8 +273,6 @@ npm i -D lint-staged
 7. Finally, open the `pre-commit` file and update the command.
 
 ```bash
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 npx lint-staged
 ```
 
