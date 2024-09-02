@@ -130,3 +130,123 @@ npm install --save-dev eslint-config-prettier
 ```
 
 That's it.
+
+## STYLE LINTING
+
+1. Install the **stylelint** extension in the Visual Studio Code editor.
+
+![stylelint extension](/previews/stylelint/stylelint_extension_vs_code.jpg)
+
+2. Now, install `stylelint-config`package.
+
+```bash
+npm install @wordpress/stylelint-config --save-dev
+```
+
+**Ref:** https://developer.wordpress.org/block-editor/reference-guides/packages/packages-stylelint-config/
+
+3. Open package.json file and add this code.
+
+```json
+"stylelint": {
+	"extends": "@wordpress/stylelint-config/scss"
+}
+```
+
+![stylelint config](/previews/stylelint/stylelint-config.jpg)
+
+4. We need to install a package to fix the style linting issue in the format automatically.
+
+```bash
+npm install --save-dev stylelint
+```
+
+5. Run the command to check the `.scss` file codes.
+
+```bash
+npx stylelint "**/*.scss"
+```
+
+6. Finally, we need to update that code to `package.json`.
+
+```json
+"format": "wp-scripts format && stylelint \"**/*.scss\" --fix"
+```
+
+![Stylelint format](/previews/stylelint/stylelint-config.jpg)
+
+So, when we run the following command, it will automatically format the code.
+
+```bash
+npm run format
+```
+
+## Configure Husky
+
+If there are errors in JavaScript and CSS files, **Husky** will prevent committing any chnages.
+
+### Install Husky
+
+1. Run this command to install Husky.
+
+```bash
+npm install husky -D
+```
+
+**Ref:** https://github.com/typicode/husky
+
+2. Open the `package.json` file and add this code.
+
+```json
+"prepare": "husky install"
+```
+
+![update the package.json file for husky](/previews/husky/add_husky_prepare_command.jpg)
+
+3. Now, run this command and it will create a `.husky` directory inside the project root.
+
+```bash
+npm run prepare
+```
+
+![.husky folder](/previews/husky/husky_folder.jpg)
+
+4. Next, run the `hook` command. This command will create a `pre-commit` file. We will update the command in the next steps.
+
+```bash
+npx husky add .husky/pre-commit "npm test"
+```
+
+![husky pre-commit file](/previews/husky/husky_pre_commit_file.jpg)
+
+5. Add the `lint-staged` package. It will checks only the staged `js or scss`files.
+
+```bash
+npm i -D lint-staged
+```
+
+6. Finally, open the `package.json` file and add the `lint-staged` code.
+
+```json
+"lint-staged": {
+		"*.js": [
+			"wp-scripts lint-js",
+			"wp-scripts format"
+		],
+		"*.scss": "npx stylelint --fix"
+	},
+```
+
+7. Now try to commit the changes.
+
+```bash
+git commit -m "first commit"
+```
+
+![husky git commit](/previews/husky/husky_git_commit.jpg)
+
+That's it.
+
+### Acknowledgement
+
+- [bluewindlab.net](https://bluewindlab.net)
