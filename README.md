@@ -104,15 +104,9 @@ We need to add some custom settings code for the VS code editor. Please note tha
 
 ## JS LINTING
 
-The js linting option checks for any JavaScript errors or unused variables. Write the following command to check the status of JS linting. After running the following command, you will see the following errors.
+The js linting option checks for any JavaScript errors or unused variables. Write the following command to check the status of JS linting.
 
-```bash
-npm run lint:js
-```
-
-![js lint error](./previews/jslint/js_lint_error.jpg)
-
-### Configure Prettier and JS Lint to Fix conflicts
+### Configure Prettier for JSlint
 
 There is a known issue between Prettier and JS Lint. Prettier automatically formats the code and converts a single quote (‘) to a double quote ("). However, JS Lint considers it an error, and it expects a single quote (').
 
@@ -159,6 +153,14 @@ npm install --save-dev eslint-config-prettier
   "extends": ["plugin:@wordpress/eslint-plugin/recommended-with-formatting", "prettier"]
 }
 ```
+
+7. Finaly, run this command to check the javascript errors.
+
+```bash
+npm run lint:js
+```
+
+![js lint error](./previews/jslint/js_lint_error.jpg)
 
 ## STYLE LINTING
 
