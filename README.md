@@ -256,7 +256,7 @@ echo "npm test" > .husky/pre-commit
 npm i -D lint-staged
 ```
 
-6. Finally, open the `package.json` file and add the `lint-staged` code.
+6. Next, open the `package.json` file and add the `lint-staged` code.
 
 ```json
 "lint-staged": {
@@ -270,7 +270,17 @@ npm i -D lint-staged
 
 ![package.json lint-staged code](/previews/husky/package-json-lint-staged-code.jpg)
 
-7. Now try to commit the changes.
+7. Finally, open the `pre-commit` file and update the command.
+
+```bash
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+npx lint-staged
+```
+
+![update pre-commit file code](/previews/husky/update-pre-commit-file-code.jpg)
+
+8. Now try to commit the changes.
 
 ```bash
 git commit -m "first commit"
