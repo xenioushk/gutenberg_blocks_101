@@ -1,3 +1,10 @@
+## Table of contents
+
+- [Initialize a Gutenberg Block](#initialize-a-Gutenberg-block)
+- [JS LINTING](#js-linting)
+- [STYLE LINTING](#style-linting)
+- [Configure Husky](#configure-husky)
+
 ## Initialize a Gutenberg Block
 
 1. Go to the `wp-content/plugins`folder.
@@ -128,8 +135,6 @@ npm install --save-dev eslint-config-prettier
   "extends": ["plugin:@wordpress/eslint-plugin/recommended-with-formatting", "prettier"]
 }
 ```
-
-That's it.
 
 ## STYLE LINTING
 
