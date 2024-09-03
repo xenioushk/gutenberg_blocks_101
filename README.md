@@ -253,12 +253,14 @@ npm run prepare
 4. Next, run the `hook` command. This command will create a `pre-commit` file. We will update the command in the next steps.
 
 ```bash
-echo "npm test" > .husky/pre-commit
+echo "npx lint-staged" > .husky/pre-commit
 ```
 
 ![husky pre-commit file](/previews/husky/husky_pre_commit_file.jpg)
 
-5. Add the `lint-staged` package. It will checks only the staged `js or scss`files.
+![update pre-commit file code](/previews/husky/update-pre-commit-file-code.jpg)
+
+5. Now setup the `lint-staged` package. It will checks only the staged `js or scss`files.
 
 ```bash
 npm i -D lint-staged
@@ -278,15 +280,7 @@ npm i -D lint-staged
 
 ![package.json lint-staged code](/previews/husky/package-json-lint-staged-code.jpg)
 
-7. Finally, open the `pre-commit` file and update the command.
-
-```bash
-npx lint-staged
-```
-
-![update pre-commit file code](/previews/husky/update-pre-commit-file-code.jpg)
-
-8. Now try to commit the changes.
+7. Finally, try to commit the changes.
 
 ```bash
 git commit -m "first commit"
