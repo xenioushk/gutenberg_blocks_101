@@ -150,7 +150,7 @@ npm install --save-dev eslint-config-prettier
 
 ```JSON
 {
-  "extends": ["plugin:@wordpress/eslint-plugin/recommended-with-formatting", "prettier"]
+"extends": ["plugin:@wordpress/eslint-plugin/recommended-with-formatting", "prettier"]
 }
 ```
 
@@ -188,7 +188,7 @@ npm install @wordpress/stylelint-config --save-dev
 
 ```json
 "stylelint": {
-	"extends": "@wordpress/stylelint-config/scss"
+  "extends": "@wordpress/stylelint-config/scss"
 }
 ```
 
@@ -270,12 +270,12 @@ npm i -D lint-staged
 
 ```json
 "lint-staged": {
-		"*.js": [
-			"wp-scripts lint-js",
-			"wp-scripts format"
-		],
-		"*.scss": "npx stylelint --fix"
-	},
+  "*.js": [
+    "wp-scripts lint-js",
+    "wp-scripts format"
+  ],
+  "*.scss": "npx stylelint --fix"
+},
 ```
 
 ![package.json lint-staged code](/previews/husky/package-json-lint-staged-code.jpg)
