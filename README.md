@@ -160,6 +160,14 @@ npm install --save-dev eslint-config-prettier
 npm run lint:js
 ```
 
+**Note:** If lint and format codes are missing from package.json file, add this codes.
+
+```bash
+"format": "wp-scripts format",
+"lint:css": "wp-scripts lint-style",
+"lint:js": "wp-scripts lint-js"
+```
+
 ![js lint error](./previews/jslint/js_lint_error.jpg)
 
 ## STYLE LINTING
